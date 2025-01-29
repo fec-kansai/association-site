@@ -1,7 +1,7 @@
 import 'package:associate_site/models/info_model.dart';
 
 const title = '一般社団法人関西開発者会議';
-const enTitle = 'Kwansei Kaihatusya Kaigi Association';
+const enTitle = 'Kwansei Kaihatusha Kaigi Association';
 
 final List<Info> info = [
   Info(label: '名称', text: '$title / $enTitle'),
