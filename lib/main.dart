@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromRGBO(234, 228, 202, 1),
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(),
@@ -37,7 +39,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.deepPurple[50],
+          color: const Color.fromRGBO(234, 228, 202, 0.6),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +48,7 @@ class MyHomePage extends StatelessWidget {
                 const CircleAvatar(
                   radius: 50.0,
                   backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('assets/temp_k3_icon.png'),
+                  backgroundImage: AssetImage('assets/k3_icon.png'),
                 ),
                 ...info.map((i) {
                   return TitleSection(
