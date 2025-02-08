@@ -54,7 +54,11 @@ class MyHomePage extends StatelessWidget {
                   return TitleSection(
                     name: i.label,
                     children: [
-                      Text(i.text, style: TextStyle(color: Colors.grey[500])),
+                      Text(
+                        i.text,
+                        semanticsLabel: i.text,
+                        style: TextStyle(color: Colors.grey[500]),
+                      ),
                       (i.label == '法人の公告方法' ||
                               i.label == '目的等' ||
                               i.label == 'ポリシー類')
@@ -71,6 +75,7 @@ class MyHomePage extends StatelessWidget {
                                       children: [
                                         Text(
                                           n[0],
+                                          semanticsLabel: n[0],
                                           style: TextStyle(
                                             color: Colors.grey[500],
                                           ),
@@ -92,6 +97,7 @@ class MyHomePage extends StatelessWidget {
                               .map(
                                 (p) => Text(
                                   p,
+                                  semanticsLabel: p,
                                   style: TextStyle(color: Colors.grey[500]),
                                 ),
                               )

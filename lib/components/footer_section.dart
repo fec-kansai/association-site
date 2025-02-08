@@ -54,6 +54,7 @@ class FooterSection extends StatelessWidget {
         const SizedBox(height: 32),
         const Text(
           copyright,
+          semanticsLabel: copyright,
           style: TextStyle(
             fontWeight: FontWeight.w300,
             fontSize: 12.0,
@@ -62,6 +63,7 @@ class FooterSection extends StatelessWidget {
         ),
         const Text(
           'Powered by $title',
+          semanticsLabel: 'Powered by $title',
           style: TextStyle(
             fontWeight: FontWeight.w300,
             fontSize: 12.0,

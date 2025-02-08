@@ -20,6 +20,7 @@ class TitleSection extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     name,
+                    semanticsLabel: name,
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),

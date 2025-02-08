@@ -26,6 +26,7 @@ class TextLinkButton extends StatelessWidget {
               child: Center(
                 child: Text(
                   name,
+                  semanticsLabel: name,
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
