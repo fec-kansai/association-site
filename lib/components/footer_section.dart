@@ -53,7 +53,7 @@ class FooterSection extends StatelessWidget {
         ),
         const SizedBox(height: 32),
         const Text(
-          'Copyright ©2024-2025, All Rights Reserved.',
+          copyright,
           style: TextStyle(
             fontWeight: FontWeight.w300,
             fontSize: 12.0,

@@ -3,6 +3,8 @@ import 'package:associate_site/models/info_model.dart';
 const title = '一般社団法人関西開発者会議';
 const enTitle = 'Kwansei Kaihatusha Kaigi Association';
 
+const copyright = 'Copyright ©2024-2025, All Rights Reserved.';
+
 final List<Info> info = [
   Info(label: '名称', text: '$title / $enTitle'),
   Info(label: '主たる事務所', text: '大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12'),
