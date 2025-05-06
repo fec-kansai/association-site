@@ -25,6 +25,40 @@ final purposes = [
   '前各号に附帯又は関連する事業',
 ];
 
+final policies = [
+  [
+    '行動規範',
+    'https://docs.google.com/document/d/1ehwr1skJ_HS0Ef2VL18Hoka1WSB_Qvi5WYOOrRP_zSA/edit?usp=sharing',
+  ],
+  [
+    'プライバシーポリシー',
+    'https://docs.google.com/document/d/1EZ-C2aJ_mzKHgZa3IYePkB5zC9TYBBTDJRiwA7KxotM/edit?usp=sharing',
+  ],
+  [
+    '反社会的勢力排除ポリシー',
+    'https://docs.google.com/document/d/187gfjUQYCNd0SI2h5VrQCPG6FyIvodq_foECA_9eCpw/edit?usp=sharing',
+  ],
+  [
+    '関連イベントのガイドライン',
+    'https://docs.google.com/document/d/107_5Vfr-dFtrKDtJWbHezFlomkG5chJez51tWMuGV98/edit?usp=sharing',
+  ],
+  [
+    'イベント参加規約',
+    '',
+    // 'https://docs.google.com/document/d/1yFnBpDiANWWt8PQ69mISF7jd2gSZkPJsLNbqa133mA8/edit?usp=sharing',
+  ],
+  [
+    'ロゴ使用ガイドライン',
+    '',
+    // 'https://docs.google.com/document/d/1wTOrXAN6pgCtEe7DGj5sfMccSk1AaJ1PTQZXuY6TVWU/edit?usp=sharing',
+  ],
+  [
+    '特定商取引法に基づく表記',
+    '',
+    // 'https://docs.google.com/document/d/1NICCFP52Gny908ZSrwwW_r-mou9niUjmjiGie1HlbQM/edit?usp=sharing',
+  ],
+];
+
 final links = [
   ['github', 'https://github.com/fec-kansai'],
   ['twitter', 'https://x.com/fec_kansai'],
