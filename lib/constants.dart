@@ -63,4 +63,5 @@ final links = [
   ['github', 'https://github.com/fec-kansai'],
   ['twitter', 'https://x.com/fec_kansai'],
   ['bluesky', 'https://bsky.app/profile/fec-kansai.bsky.social'],
+  ['medium', 'https://medium.com/fec-kansai'],
 ];
