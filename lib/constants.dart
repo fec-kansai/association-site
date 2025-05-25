@@ -15,7 +15,10 @@ final List<Info> info = [
 ];
 
 final notices = [
-  //
+  [
+    '2025年度(令和7年度)貸借対照表',
+    'https://drive.google.com/file/d/1bdQkiS53fz4yTlYBBGcSsolhvPfLrMX4/view?usp=sharing',
+  ],
 ];
 
 final purposes = [
