@@ -87,6 +87,29 @@ class MyHomePage extends StatelessWidget {
                                 ),
                               )
                               .toList()
+                          : i.label == '特定商取引法に基づく表記'
+                          ? (tokusho
+                              .map(
+                                (t) => Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      t.label,
+                                      style: const TextStyle(
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    const Gap(8),
+                                    Text(
+                                      t.text,
+                                      style: TextStyle(color: Colors.grey[500]),
+                                    ),
+                                    const Gap(24),
+                                  ],
+                                ),
+                              )
+                              .toList())
                           : [const SizedBox()],
                       ...i.label == '目的等'
                           ? purposes

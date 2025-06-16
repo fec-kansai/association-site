@@ -3,6 +3,9 @@ import 'package:associate_site/models/info_model.dart';
 const title = '一般社団法人関西開発者会議';
 const enTitle = 'Kwansei Kaihatusha Kaigi Association';
 
+const leader = '北村勇磨';
+const enLeader = 'Yuma Kitamura';
+
 final List<Info> info = [
   Info(label: '名称', text: '$title / $enTitle'),
   Info(label: '主たる事務所', text: '大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12'),
@@ -12,6 +15,7 @@ final List<Info> info = [
     text:
         '目的 当法人は、関西におけるエンジニアの技術共有およびコミュニケーションを支援、充実することを目的とし、その目的に資するため、次の事業を行う',
   ),
+  Info(label: '特定商取引法に基づく表記', text: ''),
 ];
 
 final notices = [
@@ -26,6 +30,29 @@ final purposes = [
   'エンジニアの育成の推進を図る活動',
   '技術共有、コミュニケーションを目的とした催しの支援および人材育成',
   '前各号に附帯又は関連する事業',
+];
+
+final List<Info> tokusho = [
+  Info(label: '事業者', text: '$title / $enTitle'),
+  Info(label: '代表者', text: '$leader / $enLeader'),
+  Info(label: '所在地', text: '大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12'),
+  Info(
+    label: '電話番号',
+    text:
+        '※当社ではお電話によるお問い合わせは承っておりません。フロントエンドカンファレンス関西 お問い合わせフォーム までご連絡くださいますようお願いいたします。',
+  ),
+  Info(label: '販売価格', text: '各商品に表記された価格に準じます。'),
+  Info(label: 'サービス代金以外の料金', text: '注文手数料（コンビニ、ATM 決済の場合）'),
+  Info(
+    label: '代金の支払い時期および決済方法',
+    text: 'クレジットカード（即時）、コンビニ決済（支払期限まで）、ATM 決済（支払期限まで） ※ 予定が変更される場合があります。',
+  ),
+  Info(label: 'サービスの提供時期', text: 'フロントエンドカンファレンス関西の開催日'),
+  Info(
+    label: '返品・返金',
+    text:
+        'チケット購入から 50 日未満、かつ決済方法がクレジットカードの場合のみ、チケットのキャンセル・返金が可能です。コンビニ、ATM 決済ではキャンセル・返金できませんので、あらかじめご了承ください。キャンセルをご希望の場合は、購入後に届く購入完了メールに記載されている購入者のお名前、注文番号を添えて、フロントエンドカンファレンス関西 お問い合わせフォームよりご連絡ください。',
+  ),
 ];
 
 final policies = [
