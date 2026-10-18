@@ -1,7 +1,7 @@
+import 'package:associate_site/styles.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
-import 'package:associate_site/styles.dart'; 
 
 class App extends StatelessComponent {
   const App({super.key});
@@ -111,43 +111,81 @@ class CorporateInfoPage extends StatelessComponent {
   Component build(BuildContext context) {
     return main_([
       div(classes: 'content-wrapper', [
-        _section('名称', [p([text('一般社団法人関西開発者会議 / Kwansei Kaihatusha Kaigi Association')])]),
-        _section('主たる事務所', [p([text('大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12')])]),
+        _section('名称', [
+          p([text('一般社団法人関西開発者会議 / Kwansei Kaihatusha Kaigi Association')]),
+        ]),
+        _section('主たる事務所', [
+          p([text('大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12')]),
+        ]),
         _section('法人の公告方法', [
           p([text('当法人の公告は、電子公告により行う')]),
           div(classes: 'announcement-row', [
             span([text('2024年度(令和6年度)貸借対照表')]),
-            a(href: 'https://drive.google.com/file/d/1bdQkiS53fz4yTlYBBGcSsolhvPfLrMX4/view?usp=share_link', classes: 'pdf-button', [text('PDF を開く')]),
+            a(
+              href: 'https://drive.google.com/file/d/1bdQkiS53fz4yTlYBBGcSsolhvPfLrMX4/view?usp=share_link',
+              classes: 'pdf-button',
+              [text('PDF を開く')],
+            ),
           ]),
           div(classes: 'announcement-row', [
             span([text('2025年度(令和7年度)貸借対照表')]),
-            a(href: 'https://drive.google.com/file/d/1qJ88Va-GO_1ZWxOwfe1tGntkTt7iIi85/view?usp=share_link', classes: 'pdf-button', [text('PDF を開く')]),
+            a(
+              href: 'https://drive.google.com/file/d/1qJ88Va-GO_1ZWxOwfe1tGntkTt7iIi85/view?usp=share_link',
+              classes: 'pdf-button',
+              [text('PDF を開く')],
+            ),
           ]),
         ]),
         _section('特定商取引法に基づく表記', [
-          _sub('事業者'), p([text('一般社団法人関西開発者会議 / Kwansei Kaihatusha Kaigi Association')]),
-          _sub('代表者'), p([text('北村勇磨 / Yuma Kitamura')]),
-          _sub('所在地'), p([text('大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12')]),
-          _sub('電話番号'), p([text('※当社ではお電話によるお問い合わせは承っておりません。フロントエンドカンファレンス関西 お問い合わせフォーム までご連絡くださいますようお願いいたします。')]),
-          _sub('販売価格'), p([text('各商品に表記された価格に準じます。')]),
-          _sub('サービス代金以外の料金'), p([text('注文手数料（コンビニ、ATM 決済の場合）')]),
-          _sub('代金の支払い時期および決済方法'), p([text('クレジットカード（即時）、コンビニ決済（支払期限まで）、ATM 決済（支払期限まで） ※予定が変更される場合があります。')]),
-          _sub('サービスの提供時期'), p([text('フロントエンドカンファレンス関西の開催日')]),
-          _sub('返品・返金'), p([text('チケット購入から 50 日未満、かつ決済方法がクレジットカードの場合のみ、チケットのキャンセル・返金が可能です。コンビニ、ATM 決済ではキャンセル・返金できませんので、あらかじめご了承ください。キャンセルをご希望の場合は、購入後に届く購入完了メールに記載されている購入者のお名前、注文番号を添えて、フロントエンドカンファレンス関西 お問い合わせフォームよりご連絡ください。')]),
+          _sub('事業者'),
+          p([text('一般社団法人関西開発者会議 / Kwansei Kaihatusha Kaigi Association')]),
+          _sub('代表者'),
+          p([text('北村勇磨 / Yuma Kitamura')]),
+          _sub('所在地'),
+          p([text('大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12')]),
+          _sub('電話番号'),
+          p([text('※当社ではお電話によるお問い合わせは承っておりません。フロントエンドカンファレンス関西 お問い合わせフォーム までご連絡くださいますようお願いいたします。')]),
+          _sub('販売価格'),
+          p([text('各商品に表記された価格に準じます。')]),
+          _sub('サービス代金以外の料金'),
+          p([text('注文手数料（コンビニ、ATM 決済の場合）')]),
+          _sub('代金の支払い時期および決済方法'),
+          p([text('クレジットカード（即時）、コンビニ決済（支払期限まで）、ATM 決済（支払期限まで） ※予定が変更される場合があります。')]),
+          _sub('サービスの提供時期'),
+          p([text('フロントエンドカンファレンス関西の開催日')]),
+          _sub('返品・返金'),
+          p([
+            text(
+              'チケット購入から 50 日未満、かつ決済方法がクレジットカードの場合のみ、チケットのキャンセル・返金が可能です。コンビニ、ATM 決済ではキャンセル・返金できませんので、あらかじめご了承ください。キャンセルをご希望の場合は、購入後に届く購入完了メールに記載されている購入者のお名前、注文番号を添えて、フロントエンドカンファレンス関西 お問い合わせフォームよりご連絡ください。',
+            ),
+          ]),
         ]),
 
         div(classes: 'cards-grid', [
           _buildCard('📄 ドキュメント', [
             p([text('日本語で書かれた以下のドキュメントをご覧いただけます。')]),
-            _docLink('行動規範', 'https://docs.google.com/document/d/1ehwr1skJ_HS0Ef2VL18Hoka1WSB_Qvi5WYOOrRP_zSA/edit?usp=sharing'),
-            _docLink('プライバシーポリシー', 'https://docs.google.com/document/d/1EZ-C2aJ_mzKHgZa3IYePkB5zC9TYBBTDJRiwA7KxotM/edit?usp=sharing'),
-            _docLink('反社会的勢力排除ポリシー', 'https://docs.google.com/document/d/187gfjUQYCNd0SI2h5VrQCPG6FyIvodq_foECA_9eCpw/edit?usp=sharing'),
-            _docLink('関連イベントのガイドライン', 'https://docs.google.com/document/d/107_5Vfr-dFtrKDtJWbHezFlomkG5chJez51tWMuGV98/edit?usp=sharing'),
+            _docBilingualLink('行動規範', '/code-of-conduct', '/en/code-of-conduct'),
+            _docBilingualLink('プライバシーポリシー', '/privacy-policy', '/en/privacy-policy'),
+            _docLink(
+              '反社会的勢力排除ポリシー',
+              'https://docs.google.com/document/d/187gfjUQYCNd0SI2h5VrQCPG6FyIvodq_foECA_9eCpw/edit?usp=sharing',
+            ),
+            _docLink(
+              '関連イベントのガイドライン',
+              'https://docs.google.com/document/d/107_5Vfr-dFtrKDtJWbHezFlomkG5chJez51tWMuGV98/edit?usp=sharing',
+            ),
             // _docLink('イベント参加規約 (WIP)', '#'),
-            _docLink('ロゴ使用ガイドライン (WIP)', 'https://docs.google.com/document/d/1wTOrXAN6pgCtEe7DGj5sfMccSk1AaJ1PTQZXuY6TVWU/edit?usp=sharing'),
+            _docLink(
+              'ロゴ使用ガイドライン (WIP)',
+              'https://docs.google.com/document/d/1wTOrXAN6pgCtEe7DGj5sfMccSk1AaJ1PTQZXuY6TVWU/edit?usp=sharing',
+            ),
           ]),
           _buildCard('👥 コミュニティに参加する', [
-            p([text('フロントエンドカンファレンス関西のコミュニティに参加して、最新情報を入手したり、他の開発者と交流したりしましょう。なお、フロントエンドカンファレンス関西については、一般社団法人関西開発者会議の協力をもって開催されます。')]),
+            p([
+              text(
+                'フロントエンドカンファレンス関西のコミュニティに参加して、最新情報を入手したり、他の開発者と交流したりしましょう。なお、フロントエンドカンファレンス関西については、一般社団法人関西開発者会議の協力をもって開催されます。',
+              ),
+            ]),
             _socialTile('X', '@fec_kansaiをフォロー', 'https://x.com/fec_kansai', '🐦'),
             _socialTile('GitHub', 'fec-kansaiリポジトリに貢献する', 'https://github.com/fec-kansai', '📂'),
           ]),
@@ -156,23 +194,28 @@ class CorporateInfoPage extends StatelessComponent {
     ]);
   }
 
-  Component _section(String title, List<Component> children) =>
-      div(classes: 'info-section', [h3([text(title)]), ...children]);
+  Component _section(String title, List<Component> children) => div(classes: 'info-section', [
+    h3([text(title)]),
+    ...children,
+  ]);
 
   Component _sub(String label) => strong(classes: 'sub-label', [text(label)]);
 
-  Component _buildCard(String title, List<Component> children) =>
-      div(classes: 'card', [h3([text(title)]), ...children]);
+  Component _buildCard(String title, List<Component> children) => div(classes: 'card', [
+    h3([text(title)]),
+    ...children,
+  ]);
 
-  Component _docLink(String label, String href) =>
-      a(href: href, classes: 'doc-link', [text(label), span([text('→')])]);
+  Component _docLink(String label, String href) => a(href: href, classes: 'doc-link', [
+    text(label),
+    span([text('→')]),
+  ]);
 
-  Component _socialTile(String title, String sub, String href, String icon) =>
-      a(href: href, classes: 'social-tile', [
-        div(classes: 'tile-icon', [text(icon)]),
-        div([
-          strong(classes: 'tile-title', [text(title)]),
-          span(classes: 'tile-sub', [text(sub)]),
-        ]),
-      ]);
+  Component _socialTile(String title, String sub, String href, String icon) => a(href: href, classes: 'social-tile', [
+    div(classes: 'tile-icon', [text(icon)]),
+    div([
+      strong(classes: 'tile-title', [text(title)]),
+      span(classes: 'tile-sub', [text(sub)]),
+    ]),
+  ]);
 }
