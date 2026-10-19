@@ -164,8 +164,14 @@ class CorporateInfoPage extends StatelessComponent {
         div(classes: 'cards-grid', [
           _buildCard('📄 ドキュメント', [
             p([text('日本語で書かれた以下のドキュメントをご覧いただけます。')]),
-            _docBilingualLink('行動規範', '/code-of-conduct', '/en/code-of-conduct'),
-            _docBilingualLink('プライバシーポリシー', '/privacy-policy', '/en/privacy-policy'),
+            _docLink(
+              '行動規範',
+              'https://docs.google.com/document/d/1ehwr1skJ_HS0Ef2VL18Hoka1WSB_Qvi5WYOOrRP_zSA/edit?usp=sharing',
+            ),
+            _docLink(
+              'プライバシーポリシー',
+              'https://docs.google.com/document/d/1EZ-C2aJ_mzKHgZa3IYePkB5zC9TYBBTDJRiwA7KxotM/edit?usp=sharing',
+            ),
             _docLink(
               '反社会的勢力排除ポリシー',
               'https://docs.google.com/document/d/187gfjUQYCNd0SI2h5VrQCPG6FyIvodq_foECA_9eCpw/edit?usp=sharing',
