@@ -313,6 +313,7 @@ class CorporateInfoPage extends StatelessComponent {
   Component build(BuildContext context) {
     return main_([
       div(classes: 'content-wrapper', [
+        h2([text('一般社団法人関西開発者会議')]),
         _section('名称', [
           p([text('一般社団法人関西開発者会議 / Kwansei Kaihatusha Kaigi Association')]),
         ]),
