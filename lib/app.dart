@@ -182,6 +182,74 @@ class App extends StatelessComponent {
     ),
     css('.tile-title').styles(display: Display.block, fontWeight: FontWeight.bold),
     css('.tile-sub').styles(fontSize: 0.85.rem, color: DesignTokens.muted),
+    css('.history-section').styles(margin: Margin.only(top: 48.px)),
+    css('.history-year').styles(margin: Margin.only(top: 24.px)),
+    css('.history-header').styles(
+      display: Display.flex,
+      alignItems: AlignItems.baseline,
+      gap: Gap.all(12.px),
+      margin: Margin.only(top: 24.px),
+    ),
+    css('.history-header .sub-label').styles(
+      margin: Margin.zero,
+    ),
+    css('.event-site-link').styles(
+      color: Color('#007AFF'),
+      fontSize: 0.9.rem,
+      fontWeight: FontWeight.bold,
+      textDecoration: TextDecoration.none,
+    ),
+    css('.history-date').styles(
+      display: Display.block,
+      margin: Margin.only(top: 4.px),
+      fontSize: 0.9.rem,
+      color: DesignTokens.muted,
+    ),
+    css('.album-list').styles(
+      display: Display.flex,
+      flexDirection: FlexDirection.column,
+      gap: Gap.all(8.px),
+      margin: Margin.only(top: 12.px),
+    ),
+    css('.album-link').styles(
+      display: Display.flex,
+      justifyContent: JustifyContent.spaceBetween,
+      alignItems: AlignItems.center,
+      padding: Padding.symmetric(vertical: 12.px, horizontal: 16.px),
+      backgroundColor: Color('#E3F2FD'),
+      radius: BorderRadius.circular(12.px),
+      color: Color('#007AFF'),
+      textDecoration: TextDecoration.none,
+    ),
+    css('.album-label').styles(
+      display: Display.flex,
+      alignItems: AlignItems.center,
+      gap: Gap.all(8.px),
+      raw: {'flex-wrap': 'wrap'},
+    ),
+    css('.album-badge').styles(
+      padding: Padding.symmetric(vertical: 2.px, horizontal: 10.px),
+      backgroundColor: Color('#FFF3E0'),
+      color: Color('#E65100'),
+      fontSize: 0.75.rem,
+      fontWeight: FontWeight.bold,
+      radius: BorderRadius.circular(999.px),
+      raw: {'white-space': 'nowrap'},
+    ),
+    css('.album-link-session').styles(
+      backgroundColor: Color('#BBDEFB'),
+      fontWeight: FontWeight.bold,
+      raw: {'border-left': '4px solid #007AFF'},
+    ),
+    css('.album-badge-session').styles(
+      padding: Padding.symmetric(vertical: 2.px, horizontal: 10.px),
+      backgroundColor: Color('#007AFF'),
+      color: Colors.white,
+      fontSize: 0.75.rem,
+      fontWeight: FontWeight.bold,
+      radius: BorderRadius.circular(999.px),
+      raw: {'white-space': 'nowrap'},
+    ),
     css('.doc-container').styles(
       maxWidth: 800.px,
       raw: {'line-height': '1.7'},
@@ -210,6 +278,25 @@ class App extends StatelessComponent {
       margin: Margin.only(bottom: 16.px),
     ),
   ];
+}
+
+class _Album {
+  const _Album(this.label, this.url, {this.badge, this.isSession = false});
+
+  final String label;
+  final String url;
+  final String? badge;
+  final bool isSession;
+}
+
+class _EventYear {
+  const _EventYear(this.year, this.month, this.day, {required this.albums, this.siteUrl});
+
+  final int year;
+  final int month;
+  final int day;
+  final List<_Album> albums;
+  final String? siteUrl;
 }
 
 class CorporateInfoPage extends StatelessComponent {
@@ -292,6 +379,12 @@ class CorporateInfoPage extends StatelessComponent {
             _socialTile('GitHub', 'fec-kansaiリポジトリに貢献する', 'https://github.com/fec-kansai', '📂'),
           ]),
         ]),
+
+        div(classes: 'history-section', [
+          h3([text('📸 開催履歴')]),
+          p([text('過去のフロントエンドカンファレンス関西の写真は、Google フォトでご覧いただけます。')]),
+          for (final event in ([..._eventHistory]..sort(_compareEventsDesc))) _historyYear(event),
+        ]),
       ]),
     ]);
   }
@@ -329,6 +422,120 @@ class CorporateInfoPage extends StatelessComponent {
       span(classes: 'tile-sub', [text(sub)]),
     ]),
   ]);
+
+  static const List<_EventYear> _eventHistory = [
+    _EventYear(
+      2026,
+      10,
+      12,
+      siteUrl: 'https://frontend-conf.osaka.jp/',
+      albums: [
+        _Album(
+          'まいどルーム（グランホール 1）',
+          'https://photos.app.goo.gl/L5zN11R59RfTEuNQ6',
+          isSession: true,
+        ),
+        _Album(
+          'おおきにルーム（グランホール 2）',
+          'https://photos.app.goo.gl/EjukXq8mWsNB3SF18',
+          isSession: true,
+        ),
+        _Album(
+          '受付・スタンプラリー',
+          'https://photos.app.goo.gl/4fegNtHp5nhu8U497',
+        ),
+        _Album(
+          'ランチ（ランチセッション）',
+          'https://photos.app.goo.gl/WuaC2VGLEViA961S8',
+        ),
+        _Album(
+          'ASK THE SPEAKER',
+          'https://photos.app.goo.gl/yxQNnuggjJ2MJnjF8',
+        ),
+        _Album(
+          'アフターパーティー',
+          'https://photos.app.goo.gl/eQ5USqhhCsERGvvi7',
+        ),
+        _Album(
+          'コミュニティセッション',
+          'https://photos.app.goo.gl/CrRZhqU12zLjM9XZA',
+        ),
+        _Album(
+          'スピーカーパーティー',
+          'https://photos.app.goo.gl/kQYuk9PN6m4cLS5NA',
+          badge: '登壇者限定',
+        ),
+      ],
+    ),
+    _EventYear(
+      2025,
+      11,
+      30,
+      siteUrl: 'https://2025.frontend-conf.osaka.jp/',
+      albums: [
+        _Album(
+          'ナレッジワークルーム（ルーム 1 + ルーム 2）',
+          'https://photos.app.goo.gl/mPBVstBVfzv3K9uY6',
+          isSession: true,
+        ),
+        _Album(
+          'IGNITE KANSAI ルーム（ルーム 6）',
+          'https://photos.app.goo.gl/cMpRP3HQpX4K3nAx6',
+          isSession: true,
+        ),
+        _Album(
+          '学生支援 スカラシップ',
+          'https://photos.app.goo.gl/Ze7XCyh7EkuPatqY7',
+          badge: '学生限定',
+        ),
+        _Album(
+          'スピーカーパーティー',
+          'https://photos.app.goo.gl/tCYFcBz2tR2F3TPF9',
+          badge: '登壇者限定',
+        ),
+      ],
+    ),
+  ];
+
+  static int _compareEventsDesc(_EventYear a, _EventYear b) =>
+      DateTime(b.year, b.month, b.day).compareTo(DateTime(a.year, a.month, a.day));
+
+  static const _weekdays = ['月', '火', '水', '木', '金', '土', '日'];
+
+  Component _historyYear(_EventYear event) {
+    final weekday = _weekdays[DateTime(event.year, event.month, event.day).weekday - 1];
+    return div(classes: 'history-year', [
+      div(classes: 'history-header', [
+        strong(classes: 'sub-label', [text('フロントエンドカンファレンス関西 ${event.year}')]),
+        if (event.siteUrl != null)
+          a(
+            href: event.siteUrl!,
+            target: Target.blank,
+            attributes: {'rel': 'noopener noreferrer'},
+            classes: 'event-site-link',
+            [text('公式サイト 🔗')],
+          ),
+      ]),
+      span(classes: 'history-date', [text('開催日: ${event.month}/${event.day} ${weekday}曜日')]),
+      div(classes: 'album-list', [
+        for (final album in event.albums)
+          a(
+            href: album.url,
+            target: Target.blank,
+            attributes: {'rel': 'noopener noreferrer'},
+            classes: album.isSession ? 'album-link album-link-session' : 'album-link',
+            [
+              span(classes: 'album-label', [
+                text(album.label),
+                if (album.isSession) span(classes: 'album-badge-session', [text('セッション')]),
+                if (album.badge != null) span(classes: 'album-badge', [text(album.badge!)]),
+              ]),
+              span([text('→')]),
+            ],
+          ),
+      ]),
+    ]);
+  }
 }
 
 class DocumentInfoPage extends StatelessComponent {
