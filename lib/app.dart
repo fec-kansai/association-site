@@ -312,6 +312,11 @@ class CorporateInfoPage extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return main_([
+      Document.head(
+        children: [
+          script(src: 'https://rocket-form.nekohack.me/loader.js?id=frontend-conf-kwansei-interview', async: true),
+        ],
+      ),
       div(classes: 'content-wrapper', [
         h2([text('一般社団法人関西開発者会議')]),
         _section('名称', [
