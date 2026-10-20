@@ -74,6 +74,13 @@ class App extends StatelessComponent {
               filePath: 'assets/docs/event-guideline.en.md',
             ),
           ),
+          Route(
+            path: '/tokusho',
+            builder: (context, state) => const DocumentInfoPage(
+              title: '特定商取引法に基づく表記',
+              filePath: 'assets/docs/tokusho.md',
+            ),
+          ),
         ],
       ),
       footer([
@@ -244,30 +251,6 @@ class CorporateInfoPage extends StatelessComponent {
             ),
           ]),
         ]),
-        _section('特定商取引法に基づく表記', [
-          _sub('事業者'),
-          p([text('一般社団法人関西開発者会議 / Kwansei Kaihatusha Kaigi Association')]),
-          _sub('代表者'),
-          p([text('北村勇磨 / Yuma Kitamura')]),
-          _sub('所在地'),
-          p([text('大阪府大阪市北区梅田1丁目2番2号大阪駅前第2ビル12-12')]),
-          _sub('電話番号'),
-          p([text('※当社ではお電話によるお問い合わせは承っておりません。フロントエンドカンファレンス関西 お問い合わせフォーム までご連絡くださいますようお願いいたします。')]),
-          _sub('販売価格'),
-          p([text('各商品に表記された価格に準じます。')]),
-          _sub('サービス代金以外の料金'),
-          p([text('注文手数料（コンビニ、ATM 決済の場合）')]),
-          _sub('代金の支払い時期および決済方法'),
-          p([text('クレジットカード（即時）、コンビニ決済（支払期限まで）、ATM 決済（支払期限まで） ※予定が変更される場合があります。')]),
-          _sub('サービスの提供時期'),
-          p([text('フロントエンドカンファレンス関西の開催日')]),
-          _sub('返品・返金'),
-          p([
-            text(
-              'チケット購入から 50 日未満、かつ決済方法がクレジットカードの場合のみ、チケットのキャンセル・返金が可能です。コンビニ、ATM 決済ではキャンセル・返金できませんので、あらかじめご了承ください。キャンセルをご希望の場合は、購入後に届く購入完了メールに記載されている購入者のお名前、注文番号を添えて、フロントエンドカンファレンス関西 お問い合わせフォームよりご連絡ください。',
-            ),
-          ]),
-        ]),
 
         div(classes: 'cards-grid', [
           _buildCard('📄 ドキュメント', [
@@ -276,6 +259,7 @@ class CorporateInfoPage extends StatelessComponent {
             _docBilingualLink('プライバシーポリシー', '/privacy-policy', '/en/privacy-policy'),
             _docBilingualLink('反社会的勢力排除ポリシー', '/antisocial-policy', '/en/antisocial-policy'),
             _docBilingualLink('関連イベントのガイドライン', '/event-guideline', '/en/event-guideline'),
+            _docLink('特定商取引法に基づく表記', '/tokusho'),
             // _docLink('イベント参加規約 (WIP)', '#'),
             _docLink(
               'ロゴ使用ガイドライン (WIP)',
@@ -300,8 +284,6 @@ class CorporateInfoPage extends StatelessComponent {
     h3([text(title)]),
     ...children,
   ]);
-
-  Component _sub(String label) => strong(classes: 'sub-label', [text(label)]);
 
   Component _buildCard(String title, List<Component> children) => div(classes: 'card', [
     h3([text(title)]),
