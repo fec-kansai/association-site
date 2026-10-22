@@ -20,6 +20,12 @@ class HeaderState extends State<Header> {
       ]),
       button(
         classes: 'menu-toggle ${_isMenuOpen ? 'open' : ''}',
+        attributes: {
+          'type': 'button',
+          'aria-label': 'メニュー',
+          'aria-expanded': '$_isMenuOpen',
+          'aria-controls': 'site-nav',
+        },
         events: {'click': (e) => setState(() => _isMenuOpen = !_isMenuOpen)},
         [
           div(classes: 'bar', []),
@@ -27,17 +33,20 @@ class HeaderState extends State<Header> {
           div(classes: 'bar', []),
         ],
       ),
-      nav(classes: _isMenuOpen ? 'open' : '', [
-        _navItem('#home', 'Top'),
-      ]),
+      nav(
+        id: 'site-nav',
+        classes: _isMenuOpen ? 'open' : '',
+        attributes: {'aria-label': 'メインメニュー'},
+        [
+          _navItem('#home', 'Top'),
+        ],
+      ),
     ]);
   }
 
   Component _navItem(String href, String label) {
     return div(classes: 'nav-link-wrapper', [
-      a(href: href, events: {'click': (e) => setState(() => _isMenuOpen = false)}, [
-        Component.text(label)
-      ]),
+      a(href: href, events: {'click': (e) => setState(() => _isMenuOpen = false)}, [Component.text(label)]),
       div(classes: 'underline', []),
     ]);
   }
@@ -72,7 +81,6 @@ class HeaderState extends State<Header> {
         height: 44.px,
         padding: Padding.zero,
         border: Border.none,
-        outline: Outline.unset,
         cursor: Cursor.pointer,
         flexDirection: FlexDirection.column,
         justifyContent: JustifyContent.center,

@@ -114,6 +114,10 @@ class App extends StatelessComponent {
       margin: Margin.symmetric(horizontal: Unit.auto),
       padding: Padding.symmetric(vertical: DesignTokens.sectionPadding.px, horizontal: 24.px),
     ),
+    css('.page-title').styles(
+      fontSize: 1.5.rem,
+      margin: Margin.symmetric(vertical: 20.px),
+    ),
     css('.info-section').styles(margin: Margin.only(bottom: 48.px)),
     css('h3').styles(
       fontSize: 1.15.rem,
@@ -341,7 +345,7 @@ class CorporateInfoPage extends StatelessComponent {
         ],
       ),
       div(classes: 'content-wrapper', [
-        h2([text('一般社団法人関西開発者会議')]),
+        h1(classes: 'page-title', [text('一般社団法人関西開発者会議')]),
         _section('名称', [
           p([text('一般社団法人関西開発者会議 / Kwansei Kaihatusha Kaigi Association')]),
         ]),
