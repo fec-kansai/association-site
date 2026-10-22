@@ -7,11 +7,11 @@ Harassment in any form, including but not limited to sexual expressions, inappro
 Such behaviors are deemed inappropriate in any setting related to Front-end Conference Kansai, including conversations, sessions, live-stream chats, emails, and social media interactions. Regardless of intent, if Kwansei Kaihatusha Kaigi Association determines that such conduct must cease, individuals must comply immediately. Failure to do so may result in restricted participation or complete removal from the conference.
 
 ### If You Experience or Witness Harassment
-If you feel that you have been subjected to discrimination or harassment, notice someone else being harassed, or have any concerns regarding such behavior, please contact us immediately through the inquiry form.
+If you feel that you have been subjected to discrimination or harassment, notice someone else being harassed, or have any concerns regarding such behavior, please contact us immediately through the <a href="#" class="rf-btn-trig" role="button">inquiry form</a>.
 To ensure a safe environment, Kwansei Kaihatusha Kaigi Association will take all necessary actions, including notifying law enforcement if required. Your presence and well-being are of utmost importance to us, and we will always stand by those affected by discrimination or harassment.
 
 ### Need Assistance?
-For any inquiries, please reach out to Kwansei Kaihatusha Kaigi Association via the inquiry form.
+For any inquiries, please reach out to Kwansei Kaihatusha Kaigi Association via the <a href="#" class="rf-btn-trig" role="button">inquiry form</a>.
 
 ### Supplementary Provisions
 Established and Enforced: April 1, 2025

@@ -23,6 +23,7 @@ class App extends StatelessComponent {
             builder: (context, state) => const DocumentInfoPage(
               title: '行動規範',
               filePath: 'assets/docs/code-of-conduct.md',
+              inquiryForm: true,
             ),
           ),
           Route(
@@ -30,6 +31,7 @@ class App extends StatelessComponent {
             builder: (context, state) => const DocumentInfoPage(
               title: 'Code of Conduct',
               filePath: 'assets/docs/code-of-conduct.en.md',
+              inquiryForm: true,
             ),
           ),
           Route(
@@ -37,6 +39,7 @@ class App extends StatelessComponent {
             builder: (context, state) => const DocumentInfoPage(
               title: 'プライバシーポリシー',
               filePath: 'assets/docs/privacy-policy.md',
+              inquiryForm: true,
             ),
           ),
           Route(
@@ -44,6 +47,7 @@ class App extends StatelessComponent {
             builder: (context, state) => const DocumentInfoPage(
               title: 'Privacy Policy',
               filePath: 'assets/docs/privacy-policy.en.md',
+              inquiryForm: true,
             ),
           ),
           Route(
@@ -530,11 +534,13 @@ class DocumentInfoPage extends StatelessComponent {
   const DocumentInfoPage({
     required this.title,
     required this.filePath,
+    this.inquiryForm = false,
     super.key,
   });
 
   final String title;
   final String filePath;
+  final bool inquiryForm;
 
   @override
   Component build(BuildContext context) {
@@ -556,6 +562,12 @@ class DocumentInfoPage extends StatelessComponent {
     );
 
     return main_([
+      if (inquiryForm)
+        Document.head(
+          children: [
+            script(src: 'https://rocket-form.nekohack.me/loader.js?id=frontend-conf-kwansei-interview', async: true),
+          ],
+        ),
       div(classes: 'content-wrapper doc-container', [
         h1([text('一般社団法人関西開発者会議 $title')]),
         raw(htmlContent),

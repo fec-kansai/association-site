@@ -77,9 +77,10 @@ Cookies used on this website are stored for up to two years from the user’s la
 The Conference will periodically review its personal information handling practices and make continuous improvements. This Privacy Policy may be updated as necessary.
 
 ### Contact Information
-For requests regarding disclosure, opinions, inquiries, complaints, or other concerns about personal information handling, please contact us via email at staff@k3jp.org.
+For requests regarding disclosure, opinions, inquiries, complaints, or other concerns about personal information handling, please contact us via the <a href="#" class="rf-btn-trig" role="button">inquiry form</a>.
 
 ### Supplementary Provisions
 
 - Established and Enforced: April 1, 2025
 - Revised: May 24, 2026
+- Revised: October 22, 2026
