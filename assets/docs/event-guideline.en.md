@@ -54,8 +54,6 @@ The following event names are acceptable but do not grant exclusive usage rights
 
 However, ensure that these events are not mistaken for official "Front-end Conference Kansai" events. Carefully review the guidelines (including Section 2 on stating relationships) before hosting related events.
 
-### Contact Information
-For requests related to disclosure, opinions, inquiries, complaints, or other questions regarding personal information, please contact us via email at staff@k3jp.org.
-
 ### Supplementary Provisions
-Established and Effective: April 1, 2025
+- Established and Effective: April 1, 2025
+- Revised: October 22, 2026
