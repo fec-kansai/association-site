@@ -139,10 +139,11 @@ class App extends StatelessComponent {
       textDecoration: TextDecoration.none,
       radius: BorderRadius.circular(2.px),
       fontWeight: FontWeight.bold,
+      raw: {'white-space': 'nowrap', 'text-align': 'center'},
     ),
     css('.cards-grid').styles(
       display: Display.grid,
-      raw: {'grid-template-columns': 'repeat(auto-fit, minmax(400px, 1fr))'},
+      raw: {'grid-template-columns': 'repeat(auto-fit, minmax(min(400px, 100%), 1fr))'},
       gap: Gap.all(24.px),
       margin: Margin.only(top: 40.px),
     ),
@@ -167,6 +168,7 @@ class App extends StatelessComponent {
       justifyContent: JustifyContent.spaceBetween,
       alignItems: AlignItems.center,
       padding: Padding.symmetric(vertical: 8.px),
+      raw: {'flex-wrap': 'wrap', 'row-gap': '4px', 'column-gap': '12px'},
     ),
     css('.doc-row-title').styles(
       fontWeight: FontWeight.bold,
@@ -174,10 +176,12 @@ class App extends StatelessComponent {
     css('.doc-row-langs').styles(
       display: Display.flex,
       gap: Gap.all(12.px),
+      raw: {'flex-shrink': '0'},
     ),
     css('.doc-row-langs a').styles(
       color: Color('#0056B3'),
-      raw: {'text-decoration': 'underline'},
+      padding: Padding.symmetric(vertical: 6.px),
+      raw: {'text-decoration': 'underline', 'white-space': 'nowrap'},
     ),
     css('.social-tile').styles(
       display: Display.flex,
@@ -306,6 +310,36 @@ class App extends StatelessComponent {
         'text-decoration': 'underline',
       },
     ),
+
+    css.media(MediaQuery.screen(maxWidth: 600.px), [
+      css('.content-wrapper').styles(
+        padding: Padding.symmetric(vertical: 40.px, horizontal: 20.px),
+      ),
+      css('.info-section').styles(margin: Margin.only(bottom: 32.px)),
+      css('.announcement-row').styles(
+        flexDirection: FlexDirection.column,
+        alignItems: AlignItems.stretch,
+        gap: Gap.all(8.px),
+      ),
+      css('.cards-grid').styles(
+        gap: Gap.all(16.px),
+        margin: Margin.only(top: 24.px),
+      ),
+      css('.card').styles(
+        padding: Padding.all(20.px),
+        radius: BorderRadius.circular(16.px),
+      ),
+      css('.doc-link').styles(padding: Padding.symmetric(vertical: 12.px)),
+      css('.history-section').styles(margin: Margin.only(top: 32.px)),
+      css('.doc-container').styles(raw: {'overflow-wrap': 'anywhere'}),
+      css('.doc-container h1').styles(fontSize: 1.5.rem),
+      css('.doc-container h2').styles(fontSize: 1.25.rem),
+      css('.doc-container table').styles(
+        display: Display.block,
+        raw: {'overflow-x': 'auto'},
+      ),
+      css('.doc-container pre').styles(raw: {'overflow-x': 'auto'}),
+    ]),
   ];
 }
 
