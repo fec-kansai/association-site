@@ -32,6 +32,7 @@ class App extends StatelessComponent {
               title: 'Code of Conduct',
               filePath: 'assets/docs/code-of-conduct.en.md',
               inquiryForm: true,
+              lang: 'en',
             ),
           ),
           Route(
@@ -48,6 +49,7 @@ class App extends StatelessComponent {
               title: 'Privacy Policy',
               filePath: 'assets/docs/privacy-policy.en.md',
               inquiryForm: true,
+              lang: 'en',
             ),
           ),
           Route(
@@ -62,6 +64,7 @@ class App extends StatelessComponent {
             builder: (context, state) => const DocumentInfoPage(
               title: 'Anti-Social Policy',
               filePath: 'assets/docs/antisocial-policy.en.md',
+              lang: 'en',
             ),
           ),
           Route(
@@ -76,6 +79,7 @@ class App extends StatelessComponent {
             builder: (context, state) => const DocumentInfoPage(
               title: 'Event Guideline',
               filePath: 'assets/docs/event-guideline.en.md',
+              lang: 'en',
             ),
           ),
           Route(
@@ -102,6 +106,9 @@ class App extends StatelessComponent {
       color: DesignTokens.text,
       fontFamily: FontFamily('sans-serif'),
     ),
+    css('a:focus-visible, button:focus-visible').styles(
+      raw: {'outline': '3px solid #0056B3', 'outline-offset': '2px'},
+    ),
     css('.content-wrapper').styles(
       maxWidth: DesignTokens.containerWidth.px,
       margin: Margin.symmetric(horizontal: Unit.auto),
@@ -126,7 +133,7 @@ class App extends StatelessComponent {
       margin: Margin.only(top: 20.px),
     ),
     css('.pdf-button').styles(
-      backgroundColor: Color('#FF5242'),
+      backgroundColor: Color('#D32F2F'),
       color: Colors.white,
       padding: Padding.symmetric(vertical: 10.px, horizontal: 28.px),
       textDecoration: TextDecoration.none,
@@ -152,7 +159,7 @@ class App extends StatelessComponent {
       display: Display.flex,
       justifyContent: JustifyContent.spaceBetween,
       padding: Padding.symmetric(vertical: 8.px),
-      color: Color('#007AFF'),
+      color: Color('#0056B3'),
       textDecoration: TextDecoration.none,
     ),
     css('.doc-row').styles(
@@ -169,8 +176,8 @@ class App extends StatelessComponent {
       gap: Gap.all(12.px),
     ),
     css('.doc-row-langs a').styles(
-      color: Color('#007AFF'),
-      textDecoration: TextDecoration.none,
+      color: Color('#0056B3'),
+      raw: {'text-decoration': 'underline'},
     ),
     css('.social-tile').styles(
       display: Display.flex,
@@ -205,7 +212,7 @@ class App extends StatelessComponent {
       margin: Margin.zero,
     ),
     css('.event-site-link').styles(
-      color: Color('#007AFF'),
+      color: Color('#0056B3'),
       fontSize: 0.9.rem,
       fontWeight: FontWeight.bold,
       textDecoration: TextDecoration.none,
@@ -229,7 +236,7 @@ class App extends StatelessComponent {
       padding: Padding.symmetric(vertical: 12.px, horizontal: 16.px),
       backgroundColor: Color('#E3F2FD'),
       radius: BorderRadius.circular(12.px),
-      color: Color('#007AFF'),
+      color: Color('#0056B3'),
       textDecoration: TextDecoration.none,
     ),
     css('.album-label').styles(
@@ -241,7 +248,7 @@ class App extends StatelessComponent {
     css('.album-badge').styles(
       padding: Padding.symmetric(vertical: 2.px, horizontal: 10.px),
       backgroundColor: Color('#FFF3E0'),
-      color: Color('#E65100'),
+      color: Color('#BF360C'),
       fontSize: 0.75.rem,
       fontWeight: FontWeight.bold,
       radius: BorderRadius.circular(999.px),
@@ -250,11 +257,11 @@ class App extends StatelessComponent {
     css('.album-link-session').styles(
       backgroundColor: Color('#BBDEFB'),
       fontWeight: FontWeight.bold,
-      raw: {'border-left': '4px solid #007AFF'},
+      raw: {'border-left': '4px solid #0056B3'},
     ),
     css('.album-badge-session').styles(
       padding: Padding.symmetric(vertical: 2.px, horizontal: 10.px),
-      backgroundColor: Color('#007AFF'),
+      backgroundColor: Color('#0056B3'),
       color: Colors.white,
       fontSize: 0.75.rem,
       fontWeight: FontWeight.bold,
@@ -288,6 +295,17 @@ class App extends StatelessComponent {
       padding: Padding.only(left: 24.px),
       margin: Margin.only(bottom: 16.px),
     ),
+    css('.doc-container .rf-btn-trig').styles(
+      padding: Padding.zero,
+      color: Color('#0056B3'),
+      raw: {
+        'background': 'none',
+        'border': '0',
+        'font': 'inherit',
+        'cursor': 'pointer',
+        'text-decoration': 'underline',
+      },
+    ),
   ];
 }
 
@@ -317,6 +335,7 @@ class CorporateInfoPage extends StatelessComponent {
   Component build(BuildContext context) {
     return main_([
       Document.head(
+        title: '一般社団法人関西開発者会議',
         children: [
           script(src: 'https://rocket-form.nekohack.me/loader.js?id=frontend-conf-kwansei-interview', async: true),
         ],
@@ -336,6 +355,7 @@ class CorporateInfoPage extends StatelessComponent {
             a(
               href: 'https://drive.google.com/file/d/1bdQkiS53fz4yTlYBBGcSsolhvPfLrMX4/view?usp=share_link',
               classes: 'pdf-button',
+              attributes: {'aria-label': '2024年度(令和6年度)貸借対照表 PDF を開く'},
               [text('PDF を開く')],
             ),
           ]),
@@ -344,6 +364,7 @@ class CorporateInfoPage extends StatelessComponent {
             a(
               href: 'https://drive.google.com/file/d/1qJ88Va-GO_1ZWxOwfe1tGntkTt7iIi85/view?usp=share_link',
               classes: 'pdf-button',
+              attributes: {'aria-label': '2025年度(令和7年度)貸借対照表 PDF を開く'},
               [text('PDF を開く')],
             ),
           ]),
@@ -401,9 +422,13 @@ class CorporateInfoPage extends StatelessComponent {
   Component _docBilingualLink(String title, String jaHref, String enHref) => div(classes: 'doc-row', [
     span(classes: 'doc-row-title', [text(title)]),
     div(classes: 'doc-row-langs', [
-      a(href: jaHref, [text('日本語')]),
-      text('/'),
-      a(href: enHref, [text('English')]),
+      a(href: jaHref, attributes: {'aria-label': '$title (日本語)'}, [text('日本語')]),
+      span(attributes: {'aria-hidden': 'true'}, [text('/')]),
+      a(
+        href: enHref,
+        attributes: {'lang': 'en', 'hreflang': 'en', 'aria-label': '$title (English)'},
+        [text('English')],
+      ),
     ]),
   ]);
 
@@ -503,7 +528,10 @@ class CorporateInfoPage extends StatelessComponent {
           a(
             href: event.siteUrl!,
             target: Target.blank,
-            attributes: {'rel': 'noopener noreferrer'},
+            attributes: {
+              'rel': 'noopener noreferrer',
+              'aria-label': 'フロントエンドカンファレンス関西 ${event.year} 公式サイト 🔗',
+            },
             classes: 'event-site-link',
             [text('公式サイト 🔗')],
           ),
@@ -535,12 +563,14 @@ class DocumentInfoPage extends StatelessComponent {
     required this.title,
     required this.filePath,
     this.inquiryForm = false,
+    this.lang = 'ja',
     super.key,
   });
 
   final String title;
   final String filePath;
   final bool inquiryForm;
+  final String lang;
 
   @override
   Component build(BuildContext context) {
@@ -562,16 +592,24 @@ class DocumentInfoPage extends StatelessComponent {
     );
 
     return main_([
-      if (inquiryForm)
-        Document.head(
-          children: [
+      Document.head(
+        title: '$title | 一般社団法人関西開発者会議',
+        children: [
+          if (inquiryForm)
             script(src: 'https://rocket-form.nekohack.me/loader.js?id=frontend-conf-kwansei-interview', async: true),
-          ],
-        ),
-      div(classes: 'content-wrapper doc-container', [
-        h1([text('一般社団法人関西開発者会議 $title')]),
-        raw(htmlContent),
-      ]),
+        ],
+      ),
+      div(
+        classes: 'content-wrapper doc-container',
+        attributes: {'lang': lang},
+        [
+          h1([
+            span(attributes: {'lang': 'ja'}, [text('一般社団法人関西開発者会議')]),
+            text(' $title'),
+          ]),
+          raw(htmlContent),
+        ],
+      ),
     ]);
   }
 }
